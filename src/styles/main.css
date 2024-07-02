@@ -6,8 +6,12 @@ body,
   padding: 0;
 }
 
-html.dark {
-  background: #121212;
-  color-scheme: dark;
+.pc-px {
+  @apply px-8vw;
 }
 
+@screen lt-lg {
+  .pc-px {
+    @apply px-4vw;
+  }
+}

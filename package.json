@@ -8,7 +8,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "preview-https": "serve dist",
-    "test:e2e": "cypress open",
     "typecheck": "vue-tsc --noEmit",
     "up": "taze major -I",
     "sizecheck": "npx vite-bundle-visualizer"
@@ -16,16 +15,17 @@
   "dependencies": {
     "@unhead/vue": "^1.9.14",
     "@unocss/reset": "^0.61.0",
+    "@vueuse/components": "^10.11.0",
     "@vueuse/core": "^10.11.0",
     "@vueuse/head": "^2.0.0",
     "pinia": "^2.1.7",
-    "vue": "^3.4.30",
+    "vue": "^3.4.31",
     "vue-demi": "^0.14.8",
     "vue-i18n": "^9.13.1",
     "vue-router": "^4.4.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.21.1",
+    "@antfu/eslint-config": "^2.21.2",
     "@iconify-json/carbon": "^1.1.36",
     "@intlify/unplugin-vue-i18n": "^4.0.0",
     "@unocss/eslint-config": "^0.61.0",
@@ -33,10 +33,7 @@
     "@vue-macros/volar": "^0.23.0",
     "critters": "^0.0.24",
     "cross-env": "^7.0.3",
-    "cypress": "^13.12.0",
-    "cypress-vite": "^1.5.0",
-    "eslint": "^9.5.0",
-    "eslint-plugin-cypress": "^3.3.0",
+    "eslint": "^9.6.0",
     "eslint-plugin-format": "^0.1.2",
     "https-localhost": "^4.7.1",
     "lint-staged": "^15.2.7",
@@ -52,11 +49,11 @@
     "vite": "^5.3.2",
     "vite-bundle-visualizer": "^1.2.1",
     "vite-plugin-inspect": "^0.8.4",
-    "vite-plugin-vue-devtools": "^7.3.4",
+    "vite-plugin-vue-devtools": "^7.3.5",
     "vite-plugin-vue-layouts": "^0.11.0",
     "vite-plugin-webfont-dl": "^3.9.4",
     "vite-ssg": "^0.23.7",
-    "vite-ssg-sitemap": "^0.6.1",
+    "vite-ssg-sitemap": "^0.7.1",
     "vue-tsc": "^2.0.22"
   },
   "lint-staged": {

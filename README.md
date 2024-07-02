@@ -54,8 +54,6 @@
 
 - 🦾 TypeScript, 当然
 
-- ⚙️ 结合 [GitHub Actions](https://github.com/features/actions)， [Cypress](https://cypress.io/) 进行 E2E 测试
-
 - ☁️ 零配置部署 Netlify
 
 <br>
@@ -94,7 +92,6 @@
 ### 开发工具
 
 - [TypeScript](https://www.typescriptlang.org/)
-- [Cypress](https://cypress.io/) - E2E 测试
 - [pnpm](https://pnpm.js.org/) - 快, 节省磁盘空间的包管理器
 - [`vite-ssg`](https://github.com/antfu/vite-ssg) - 服务端生成
   - [critters](https://github.com/GoogleChromeLabs/critters) - 关键 CSS 生成器

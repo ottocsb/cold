@@ -9,12 +9,12 @@ import type { UserModule } from '~/types'
 const i18n = createI18n({
   legacy: false,
   locale: '',
-  messages: {},
+  messages: {}
 })
 
 const localesMap = Object.fromEntries(
   Object.entries(import.meta.glob('../../locales/*.yml'))
-    .map(([path, loadLocale]) => [path.match(/([\w-]*)\.yml$/)?.[1], loadLocale]),
+    .map(([path, loadLocale]) => [path.match(/([\w-]*)\.yml$/)?.[1], loadLocale])
 ) as Record<Locale, () => Promise<{ default: Record<string, string> }>>
 
 export const availableLocales = Object.keys(localesMap)
