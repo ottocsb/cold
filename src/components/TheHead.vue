@@ -43,10 +43,10 @@ const Language = [
 </script>
 
 <template>
-  <div flex bg-white class="pc-px items-center" py="13px" space-x="70px" b-b="gray-10 solid 2px">
+  <div flex="~ justify-between" bg-white class="pc-px items-center" py="13px" space-x="70px" b-b="gray-10 solid 2px">
     <img src="/PC/logo.png" alt="this is logo" h="5">
-    <div flex-1 class="hidden md:block">
-      <ul flex class="items-center" ml="auto">
+    <div flex-1 class="hidden lg:flex">
+      <ul flex ma>
         <li v-for="item in routeList" :key="item.path" class="mr-4">
           <RouterLink :to="item.path" :class="[route.path === item.path ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
             {{ item.name }}
@@ -64,7 +64,7 @@ const Language = [
         gap-1
         @click="() => { showOption = !showOption }"
       >
-        <span w-100px>
+        <span w-70px>
           {{ useLanguage }}
         </span>
         <div class="i-carbon:chevron-down" />
