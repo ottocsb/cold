@@ -46,7 +46,7 @@ const Language = [
   <div flex="~ justify-between" bg-white class="pc-px items-center" py="13px" space-x="70px" b-b="gray-10 solid 2px">
     <img src="/PC/logo.png" alt="this is logo" h="5">
     <div flex-1 class="hidden lg:flex">
-      <ul flex ma>
+      <ul ma flex>
         <li v-for="item in routeList" :key="item.path" class="mr-4">
           <RouterLink :to="item.path" :class="[route.path === item.path ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
             {{ item.name }}
@@ -54,10 +54,10 @@ const Language = [
         </li>
       </ul>
     </div>
-    <button h="40px" w="130px" text="white 14px" b-rd="10px" bg="black">
+    <button h="40px" px="10px" text="white 14px" b-rd="10px" bg="black">
       Merchant login
     </button>
-    <div flex space-x="12px" class="block">
+    <div flex space-x="12px" class="block <lg:hidden">
       <img src="/PC/language.png" alt="language" h="19px" w="19px">
       <div
         v-on-click-outside="() => { showOption = false }" relative flex cursor-pointer
@@ -72,7 +72,7 @@ const Language = [
           <div
             v-for="(item, index) in Language"
             :key="item.name"
-            class="p-2 text-black text-center"
+            class="p-2 text-center text-black"
             :class="[useLanguage === item.name ? 'bg-#e3e3e3!' : '', index === 0 ? 'rounded-t-10px' : '', index === Language.length - 1 ? 'rounded-b-10px' : '']"
             @click="() => { useLanguage = item.name; showOption = false }"
           >
