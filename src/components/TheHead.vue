@@ -1,6 +1,5 @@
 <script setup lang = "ts">
 import { vOnClickOutside } from '@vueuse/components'
-
 const route = useRoute()
 const useLanguage = ref('English')
 const showOption = ref(false)
@@ -22,7 +21,6 @@ const routeList: any[] = [
     name: 'Help Center'
   }
 ]
-
 const Language = [
   {
     name: '中文简体'
