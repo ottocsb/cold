@@ -21,7 +21,7 @@ const pathList = [
 </script>
 
 <template>
-  <nav class="pc-px" flex="~ col" pt="1 <lg:3" bg="#faf8fa">
+  <nav class="pc-px" flex="~ col" pt="10 <lg:3" bg="#faf8fa">
     <div flex="~ 1" justify-center gap="6 <lg:3" class="<lg:flex-col">
       <div flex="~ col 1 justify-center gap-20px">
         <img src="/PC/logo.png" alt="this is logo" h="7" w="52">
@@ -29,8 +29,8 @@ const pathList = [
           Easily accept payments from all over the world. Instant <br class="hidden <lg:block"> settlement, low fees and extensive assst support
         </div>
       </div>
-      <div flex justify-center class="<lg:block">
-        <ul flex class="items-center <lg:flex-col <lg:items-start" ml="auto <lg:0">
+      <div class="w-50% <lg:block <lg:w-full">
+        <ul flex="~ justify-between" class="items-center <lg:flex-col <lg:items-start">
           <li v-for="item in pathList" :key="item.path" :class="item.path !== route.path ? 'pb-30px' : ''">
             <RouterLink
               v-if="route.path !== item.path"
