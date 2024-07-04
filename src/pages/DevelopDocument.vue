@@ -1,10 +1,23 @@
 <script setup lang = "ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 defineOptions({
   name: 'DevelopDocument'
 })
 const showContent = ref(true)
+const active = ref<number | null>(1)
+const Title = ref('Welcome! Check out the tutorial')
 function toggleContent() {
   showContent.value = !showContent.value
+}
+function handleClick(title:string,num:Number) {
+  if (window.innerWidth <= 1024) {
+    router.push(`/DeveDetail?title=${encodeURIComponent(title)}&type=develop a document`)
+  } else {
+    active.value = num
+    Title.value= title
+  }
 }
 </script>
 
@@ -13,63 +26,53 @@ function toggleContent() {
     <div class="dev-left">
       <ul>
         <li>
-          <RouterLink to="/DeveDetail?title=Welcome! Check out the tutorial?&type=develop a document">
-            <div class="help-down" h="17.5" w="full" fw-600 flex="~ justify-center col" text="20px">
+            <div class="help-down" h="17.5" w="full" fw-600 flex="~ justify-center col" text="20px" @click="handleClick('Welcome! Check out the tutorial',1)">
               Welcome! Check out the tutorial
             </div>
-          </RouterLink>
           <div class="down-drop" mt="10px">
             <div text="20px" fw-600 w="full" class="drop-title" @click="toggleContent">
               Basics
             </div>
-            <div v-if="showContent" class="drop-width" w="full" h="12.5" text="16px" fw-400 flex="~ justify-center col">
+            <div v-if="showContent"  @click="handleClick('System',2)" class="drop-width" w="full" h="12.5" text="16px" fw-400 flex="~ justify-center col">
               System
             </div>
-            <div v-if="showContent" class="drop-width drop-active" text="16px" h="12.5" fw-400 flex="~ justify-center col">
+            <div v-if="showContent" @click="handleClick('Update',3)" class="drop-width drop-active" text="16px" h="12.5" fw-400 flex="~ justify-center col">
               Update
             </div>
-            <div v-if="showContent" class="drop-width" text="16px" h="12.5" fw-400 flex="~ justify-center col">
+            <div v-if="showContent" @click="handleClick('What are frozen assets?',4)" class="drop-width" text="16px" h="12.5" fw-400 flex="~ justify-center col">
               What are frozen assets?
             </div>
-            <div v-if="showContent" class="drop-width" text="16px" h="12.5" fw-400 flex="~ justify-center col">
+            <div v-if="showContent" class="drop-width" @click="handleClick('Update',5)"  text="16px" h="12.5" fw-400 flex="~ justify-center col">
               Update
             </div>
           </div>
         </li>
         <li mt="10px">
-          <RouterLink to="/DeveDetail?title=Welcome! Check out the tutorial?&type=develop a document">
-            <div class="help-down" h="17.5" w="full" fw-600 flex="~ justify-center col" text="20px">
+            <div class="help-down" h="17.5" w="full" fw-600 @click="handleClick('Welcome! Check out the tutorial',6)" flex="~ justify-center col" text="20px">
               Welcome! Check out the tutorial
             </div>
-          </RouterLink>
         </li>
         <li mt="10px">
-          <RouterLink to="/DeveDetail?title=What are frozen assets?&type=develop a document">
-            <div class="help-down" h="17.5" w="full" fw-600 flex="~ justify-center col" text="20px">
+            <div class="help-down" h="17.5" @click="handleClick('What are frozen assets?',7)"  w="full" fw-600 flex="~ justify-center col" text="20px">
               What are frozen assets?
             </div>
-          </RouterLink>
         </li>
         <li mt="10px">
-          <RouterLink to="/DeveDetail?title=Welcome! Check out the tutorial?&type=develop a document">
-            <div class="help-down" h="17.5" w="full" fw-600 flex="~ justify-center col" text="20px">
+            <div class="help-down" h="17.5" w="full" @click="handleClick('Welcome! Check out the tutorial',8)"   fw-600 flex="~ justify-center col" text="20px">
               Welcome! Check out the tutorial
             </div>
-          </RouterLink>
         </li>
 
         <li mt="10px">
-          <RouterLink to="/DeveDetail?title=What are frozen assets?&type=develop a document">
-            <div class="help-down" h="17.5" w="full" fw-600 flex="~ justify-center col" text="20px">
+            <div class="help-down" h="17.5" w="full" @click="handleClick('What are frozen assets?',9)"  fw-600 flex="~ justify-center col" text="20px">
               What are frozen assets?
             </div>
-          </RouterLink>
         </li>
       </ul>
     </div>
-    <div class="dev-right">
+    <div class="dev-right" v-if="active">
       <h2 text="24px" fw-600>
-        Precondition
+        {{Title}}
       </h2>
       <h3 text="20px" fw-400 mt="10px">
         Have Alipay enterprise account, complete the platform.
@@ -84,7 +87,7 @@ function toggleContent() {
       </div>
       <div h="254px" w="full" mt="20px" style="background: #303030;" />
       <h2 text="24px" fw-600 mt="40px">
-        Precondition
+        {{Title}}
       </h2>
       <h3 text="20px" fw-400 mt="10px">
         Have Alipay enterprise account, complete the platform.
@@ -135,6 +138,7 @@ function toggleContent() {
 .dev-right {
   width: calc(100% - 24.35461667vw);
   padding-left: 3vw;
+  display: block;
 }
 .help-down {
   background: #faf8fa;
@@ -174,6 +178,7 @@ function toggleContent() {
   }
   .dev-right {
     width: 100%;
+    display: none;
   }
 }
 </style>
