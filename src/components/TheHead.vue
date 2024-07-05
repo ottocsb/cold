@@ -1,5 +1,6 @@
 <script setup lang = "ts">
 import { vOnClickOutside } from '@vueuse/components'
+
 const route = useRoute()
 const useLanguage = ref('English')
 const showOption = ref(false)
@@ -43,7 +44,7 @@ const Language = [
 <template>
   <div flex="~ justify-between" bg-white class="pc-px items-center" py="13px" space-x="70px" b-b="gray-10 solid 2px">
     <img src="/PC/logo.png" alt="this is logo" h="5">
-    <div flex-1 class="hidden lg:flex">
+    <div flex-1 class="flex <lg:hidden">
       <ul ma flex>
         <li v-for="item in routeList" :key="item.path" class="mr-4">
           <RouterLink :to="item.path" :class="[route.path === item.path ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
@@ -55,18 +56,22 @@ const Language = [
     <button h="40px" px="10px" text="white 14px" b-rd="10px" bg="black">
       Merchant login
     </button>
-    <div flex space-x="12px" class="block <lg:hidden">
+    <div flex space-x="12px" class="block <lg:hidden" w="30">
       <img src="/PC/language.png" alt="language" h="19px" w="19px">
       <div
-        v-on-click-outside="() => { showOption = false }" relative flex cursor-pointer
+        v-on-click-outside="() => { showOption = false }"
+        relative
+        flex
+        flex-1
+        cursor-pointer
         gap-1
         @click="() => { showOption = !showOption }"
       >
-        <span w-70px>
+        <div flex-1>
           {{ useLanguage }}
-        </span>
+        </div>
         <div class="i-carbon:chevron-down" />
-        <div v-if="showOption" top="8" w="200px" b-rd="10px!" bg="#faf8fa" absolute z-99 flex flex-col>
+        <div v-if="showOption" top="8" w="200px" b-rd="10px!" b="solid 1px black" bg="#faf8fa" absolute z-99 flex flex-col>
           <div
             v-for="(item, index) in Language"
             :key="item.name"

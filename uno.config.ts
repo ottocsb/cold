@@ -10,7 +10,7 @@ import {
 } from 'unocss'
 
 export default defineConfig({
-  // 自定义快捷类
+  // quick class
   shortcuts: [
     ['btn', 'px-4 py-1']
   ],

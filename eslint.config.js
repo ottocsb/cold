@@ -8,9 +8,9 @@ export default antfu(
   },
   {
     rules: {
-      'style/comma-dangle': ['error', 'never'], // 关闭尾随逗号
+      'style/comma-dangle': ['error', 'never'], // Trailing commas are not allowed
       'no-console': 'off',
-      'antfu/top-level-function': 'off' // 关闭顶级函数检查 可使用箭头函数或function声明
+      'antfu/top-level-function': 'off' //  Top-level functions are allowed
     }
   }
 )

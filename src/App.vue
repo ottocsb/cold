@@ -5,12 +5,6 @@
 useHead({
   title: 'Coin Route Hub'
 })
-// 实时检查屏幕宽度并跳转到不同的页面
-// const { width } = useWindowSize()
-//
-// watchEffect(() => {
-//   console.log(width.value)
-// })
 </script>
 
 <template>

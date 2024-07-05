@@ -1,10 +1,11 @@
 <script setup lang = "ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-const router = useRouter()
+
 defineOptions({
   name: 'DevelopDocument'
 })
+const router = useRouter()
 const Title = ref('Welcome! Check out the tutorial')
 const activeIndex = ref<number | null>(null)
 const currentIndex = ref<number | null>(1)
@@ -30,11 +31,12 @@ const toggleContent = (index: number) => {
   }
 }
 const handleChildClick = (title: string, index: number) => {
-    if (window.innerWidth <= 1024) {
+  if (window.innerWidth <= 1024) {
     router.push(`/DeveDetail?title=${encodeURIComponent(title)}&type=develop a document`)
-  } else {
-    Title.value= title
-  currentIndex.value = index
+  }
+  else {
+    Title.value = title
+    currentIndex.value = index
   }
 }
 </script>
@@ -43,7 +45,7 @@ const handleChildClick = (title: string, index: number) => {
   <div class="pc-px" mt="71px">
     <div class="dev-left">
       <ul>
-        <li :class="activeIndex==1?'li-active':''" id="content-1">
+        <li id="content-1" :class="activeIndex == 1 ? 'li-active' : ''">
           <div
             class="help-down"
             :h="17.5"
@@ -57,7 +59,6 @@ const handleChildClick = (title: string, index: number) => {
           </div>
           <div v-if="activeIndex === 1">
             <div
-              @click="handleChildClick('System', 1)"
               class="drop-width"
               :class="currentIndex === 1 ? 'drop-active' : ''"
               w="full"
@@ -65,45 +66,46 @@ const handleChildClick = (title: string, index: number) => {
               text="16px"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('System', 1)"
             >
               System
             </div>
             <div
-              @click="handleChildClick('Update', 2)"
               class="drop-width"
               :class="currentIndex === 2 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('Update', 2)"
             >
               Update
             </div>
             <div
-              @click="handleChildClick('What are frozen assets?', 3)"
               class="drop-width"
               :class="currentIndex === 3 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('What are frozen assets?', 3)"
             >
               What are frozen assets?
             </div>
             <div
               class="drop-width"
-              @click="handleChildClick('Update', 4)"
               :class="currentIndex === 4 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('Update', 4)"
             >
               Update
             </div>
           </div>
         </li>
-        <li mt="10px" :class="activeIndex==2?'li-active':''" id="content-2">
+        <li id="content-2" mt="10px" :class="activeIndex == 2 ? 'li-active' : ''">
           <div
             class="help-down"
             :h="17.5"
@@ -117,7 +119,6 @@ const handleChildClick = (title: string, index: number) => {
           </div>
           <div v-if="activeIndex === 2">
             <div
-              @click="handleChildClick('System', 1)"
               class="drop-width"
               :class="currentIndex === 1 ? 'drop-active' : ''"
               w="full"
@@ -125,46 +126,47 @@ const handleChildClick = (title: string, index: number) => {
               text="16px"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('System', 1)"
             >
               System
             </div>
             <div
-              @click="handleChildClick('Update', 2)"
               class="drop-width"
               :class="currentIndex === 2 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('Update', 2)"
             >
               Update
             </div>
             <div
-              @click="handleChildClick('What are frozen assets?', 3)"
               class="drop-width"
               :class="currentIndex === 3 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('What are frozen assets?', 3)"
             >
               What are frozen assets?
             </div>
             <div
               class="drop-width"
-              @click="handleChildClick('Update', 4)"
               :class="currentIndex === 4 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('Update', 4)"
             >
               Update
             </div>
           </div>
         </li>
-        <li mt="10px" :class="activeIndex==3?'li-active':''" id="content-3">
-            <div
+        <li id="content-3" mt="10px" :class="activeIndex == 3 ? 'li-active' : ''">
+          <div
             class="help-down"
             :h="17.5"
             w="full"
@@ -173,58 +175,58 @@ const handleChildClick = (title: string, index: number) => {
             text="20px"
             @click="toggleContent(3)"
           >
-          Welcome! Check out the tutorial
+            Welcome! Check out the tutorial
           </div>
-            <div v-if="activeIndex === 3">
-              <div
-                @click="handleChildClick('System', 1)"
-                class="drop-width"
-                :class="currentIndex === 1 ? 'drop-active' : ''"
-                w="full"
-                h="12.5"
-                text="16px"
-                fw-400
-                flex="~ justify-center col"
-              >
-                System
-              </div>
-              <div
-                @click="handleChildClick('Update', 2)"
-                class="drop-width"
-                :class="currentIndex === 2 ? 'drop-active' : ''"
-                text="16px"
-                h="12.5"
-                fw-400
-                flex="~ justify-center col"
-              >
-                Update
-              </div>
-              <div
-                @click="handleChildClick('What are frozen assets?', 3)"
-                class="drop-width"
-                :class="currentIndex === 3 ? 'drop-active' : ''"
-                text="16px"
-                h="12.5"
-                fw-400
-                flex="~ justify-center col"
-              >
-                What are frozen assets?
-              </div>
-              <div
-                class="drop-width"
-                @click="handleChildClick('Update', 4)"
-                :class="currentIndex === 4 ? 'drop-active' : ''"
-                text="16px"
-                h="12.5"
-                fw-400
-                flex="~ justify-center col"
-              >
-                Update
-              </div>
-            </div>
-        </li>
-        <li mt="10px" :class="activeIndex==4?'li-active':''" id="content-4">
+          <div v-if="activeIndex === 3">
             <div
+              class="drop-width"
+              :class="currentIndex === 1 ? 'drop-active' : ''"
+              w="full"
+              h="12.5"
+              text="16px"
+              fw-400
+              flex="~ justify-center col"
+              @click="handleChildClick('System', 1)"
+            >
+              System
+            </div>
+            <div
+              class="drop-width"
+              :class="currentIndex === 2 ? 'drop-active' : ''"
+              text="16px"
+              h="12.5"
+              fw-400
+              flex="~ justify-center col"
+              @click="handleChildClick('Update', 2)"
+            >
+              Update
+            </div>
+            <div
+              class="drop-width"
+              :class="currentIndex === 3 ? 'drop-active' : ''"
+              text="16px"
+              h="12.5"
+              fw-400
+              flex="~ justify-center col"
+              @click="handleChildClick('What are frozen assets?', 3)"
+            >
+              What are frozen assets?
+            </div>
+            <div
+              class="drop-width"
+              :class="currentIndex === 4 ? 'drop-active' : ''"
+              text="16px"
+              h="12.5"
+              fw-400
+              flex="~ justify-center col"
+              @click="handleChildClick('Update', 4)"
+            >
+              Update
+            </div>
+          </div>
+        </li>
+        <li id="content-4" mt="10px" :class="activeIndex == 4 ? 'li-active' : ''">
+          <div
             class="help-down"
             :h="17.5"
             w="full"
@@ -233,71 +235,70 @@ const handleChildClick = (title: string, index: number) => {
             text="20px"
             @click="toggleContent(4)"
           >
-          What are frozen assets?
+            What are frozen assets?
           </div>
-            <div v-if="activeIndex === 4">
-              <div
-                @click="handleChildClick('System', 1)"
-                class="drop-width"
-                :class="currentIndex === 1 ? 'drop-active' : ''"
-                w="full"
-                h="12.5"
-                text="16px"
-                fw-400
-                flex="~ justify-center col"
-              >
-                System
-              </div>
-              <div
-                @click="handleChildClick('Update', 2)"
-                class="drop-width"
-                :class="currentIndex === 2 ? 'drop-active' : ''"
-                text="16px"
-                h="12.5"
-                fw-400
-                flex="~ justify-center col"
-              >
-                Update
-              </div>
-              <div
-                @click="handleChildClick('What are frozen assets?', 3)"
-                class="drop-width"
-                :class="currentIndex === 3 ? 'drop-active' : ''"
-                text="16px"
-                h="12.5"
-                fw-400
-                flex="~ justify-center col"
-              >
-                What are frozen assets?
-              </div>
-              <div
-                class="drop-width"
-                @click="handleChildClick('Update', 4)"
-                :class="currentIndex === 4 ? 'drop-active' : ''"
-                text="16px"
-                h="12.5"
-                fw-400
-                flex="~ justify-center col"
-              >
-                Update
-              </div>
+          <div v-if="activeIndex === 4">
+            <div
+              class="drop-width"
+              :class="currentIndex === 1 ? 'drop-active' : ''"
+              w="full"
+              h="12.5"
+              text="16px"
+              fw-400
+              flex="~ justify-center col"
+              @click="handleChildClick('System', 1)"
+            >
+              System
             </div>
+            <div
+              class="drop-width"
+              :class="currentIndex === 2 ? 'drop-active' : ''"
+              text="16px"
+              h="12.5"
+              fw-400
+              flex="~ justify-center col"
+              @click="handleChildClick('Update', 2)"
+            >
+              Update
+            </div>
+            <div
+              class="drop-width"
+              :class="currentIndex === 3 ? 'drop-active' : ''"
+              text="16px"
+              h="12.5"
+              fw-400
+              flex="~ justify-center col"
+              @click="handleChildClick('What are frozen assets?', 3)"
+            >
+              What are frozen assets?
+            </div>
+            <div
+              class="drop-width"
+              :class="currentIndex === 4 ? 'drop-active' : ''"
+              text="16px"
+              h="12.5"
+              fw-400
+              flex="~ justify-center col"
+              @click="handleChildClick('Update', 4)"
+            >
+              Update
+            </div>
+          </div>
         </li>
-        <li mt="10px" :class="activeIndex==5?'li-active':''" id="content-5">
+        <li id="content-5" mt="10px" :class="activeIndex == 5 ? 'li-active' : ''">
           <div
-          class="help-down"
-          :h="17.5"
-          w="full"
-          fw-600
-          flex="~ justify-center col"
-          text="20px"
-          @click="toggleContent(5)"
-        >
-        Welcome! Check out the tutorial
-        </div>
+            class="help-down"
+            :h="17.5"
+            w="full"
+            fw-600
+            flex="~ justify-center col"
+            text="20px"
+            @click="toggleContent(5)"
+          >
+            Welcome! Check out the tutorial
+          </div>
           <div v-if="activeIndex === 5">
             <div
-              @click="handleChildClick('System', 1)"
               class="drop-width"
               :class="currentIndex === 1 ? 'drop-active' : ''"
               w="full"
@@ -305,59 +306,59 @@ const handleChildClick = (title: string, index: number) => {
               text="16px"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('System', 1)"
             >
               System
             </div>
             <div
-              @click="handleChildClick('Update', 2)"
               class="drop-width"
               :class="currentIndex === 2 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('Update', 2)"
             >
               Update
             </div>
             <div
-              @click="handleChildClick('What are frozen assets?', 3)"
               class="drop-width"
               :class="currentIndex === 3 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('What are frozen assets?', 3)"
             >
               What are frozen assets?
             </div>
             <div
               class="drop-width"
-              @click="handleChildClick('Update', 4)"
               :class="currentIndex === 4 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('Update', 4)"
             >
               Update
             </div>
           </div>
-      </li>
-        <li mt="10px" :class="activeIndex==6?'li-active':''" id="content-6">
+        </li>
+        <li id="content-6" mt="10px" :class="activeIndex == 6 ? 'li-active' : ''">
           <div
-          class="help-down"
-          :h="17.5"
-          w="full"
-          fw-600
-          flex="~ justify-center col"
-          text="20px"
-          @click="toggleContent(6)"
-        >
-        What are frozen assets?
-        </div>
+            class="help-down"
+            :h="17.5"
+            w="full"
+            fw-600
+            flex="~ justify-center col"
+            text="20px"
+            @click="toggleContent(6)"
+          >
+            What are frozen assets?
+          </div>
           <div v-if="activeIndex === 6">
             <div
-              @click="handleChildClick('System', 1)"
               class="drop-width"
               :class="currentIndex === 1 ? 'drop-active' : ''"
               w="full"
@@ -365,49 +366,50 @@ const handleChildClick = (title: string, index: number) => {
               text="16px"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('System', 1)"
             >
               System
             </div>
             <div
-              @click="handleChildClick('Update', 2)"
               class="drop-width"
               :class="currentIndex === 2 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('Update', 2)"
             >
               Update
             </div>
             <div
-              @click="handleChildClick('What are frozen assets?', 3)"
               class="drop-width"
               :class="currentIndex === 3 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('What are frozen assets?', 3)"
             >
               What are frozen assets?
             </div>
             <div
               class="drop-width"
-              @click="handleChildClick('Update', 4)"
               :class="currentIndex === 4 ? 'drop-active' : ''"
               text="16px"
               h="12.5"
               fw-400
               flex="~ justify-center col"
+              @click="handleChildClick('Update', 4)"
             >
               Update
             </div>
           </div>
-      </li>
+        </li>
       </ul>
     </div>
-    <div class="dev-right" v-if="currentIndex">
+    <div v-if="currentIndex" class="dev-right">
       <h2 text="24px" fw-600>
-        {{Title}}
+        {{ Title }}
       </h2>
       <h3 text="20px" fw-400 mt="10px">
         Have Alipay enterprise account, complete the platform.
@@ -422,7 +424,7 @@ const handleChildClick = (title: string, index: number) => {
       </div>
       <div h="254px" w="full" mt="20px" style="background: #303030;" />
       <h2 text="24px" fw-600 mt="40px">
-        {{Title}}
+        {{ Title }}
       </h2>
       <h3 text="20px" fw-400 mt="10px">
         Have Alipay enterprise account, complete the platform.
@@ -446,7 +448,7 @@ const handleChildClick = (title: string, index: number) => {
 .dev-left > ul > li {
   width: 100%;
 }
-.li-active{
+.li-active {
   border: 1px solid #000000;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
@@ -470,7 +472,7 @@ const handleChildClick = (title: string, index: number) => {
   cursor: pointer;
 }
 .drop-width:hover {
- font-weight: bold;
+  font-weight: bold;
 }
 .drop-active {
   background: #e7e7e7;
@@ -497,12 +499,12 @@ const handleChildClick = (title: string, index: number) => {
     0 0 10px rgba(0, 0, 0, 0.2),
     0 0 15px rgba(0, 0, 0, 0.3);
 }
-.li-active > .help-down{
-  border:0;
+.li-active > .help-down {
+  border: 0;
 }
-.li-active > .help-down:hover{
-  border:0;
-  box-shadow:initial;
+.li-active > .help-down:hover {
+  border: 0;
+  box-shadow: initial;
 }
 .pc-px {
   display: flex;
