@@ -2,6 +2,34 @@
 defineOptions({
   name: 'HelpCenter'
 })
+
+const routeList = [
+  {
+    title: 'Welcome! Check out the tutorial',
+    to: '/DeveDetail?title=Welcome! Check out the tutorial?&type=Help Center'
+  },
+  {
+    title: 'What are frozen assets?',
+    to: '/DeveDetail?title=What are frozen assets?&type=Help Center'
+  },
+  {
+    title: 'Welcome! Check out the tutorial',
+    to: '/DeveDetail?title=Welcome! Check out the tutorial?&type=Help Center'
+  },
+  {
+    title: 'What are frozen assets?',
+    to: '/DeveDetail?title=What are frozen assets?&type=Help Center'
+  },
+  {
+    title: 'Welcome! Check out the tutorial',
+    to: '/DeveDetail?title=Welcome! Check out the tutorial?&type=Help Center'
+  },
+  {
+    title: 'What are frozen assets?',
+    to: '/DeveDetail?title=What are frozen assets?&type=Help Center'
+  }
+
+]
 </script>
 
 <template>
@@ -14,34 +42,9 @@ defineOptions({
         <input type="text" placeholder="Please enter your question" w="440px" h="44px" class="border">
       </div>
       <div class="" mt="70px" mb="98px">
-        <RouterLink to="/DeveDetail?title=Welcome! Check out the tutorial?&type=Help Center">
-          <div class="help-down" h="25" w="full" fw-400 flex="~ justify-center col" text="20px">
-            Welcome! Check out the tutorial
-          </div>
-        </RouterLink>
-        <RouterLink to="/DeveDetail?title=What are frozen assets?&type=Help Center">
-          <div class="help-down" h="25" mt="9px" w="full" fw-400 flex="~ justify-center col" text="20px">
-            What are frozen assets?
-          </div>
-        </RouterLink>
-        <RouterLink to="/DeveDetail?title=Welcome! Check out the tutorial?&type=Help Center">
-          <div class="help-down" h="25" mt="9px" w="full" fw-400 flex="~ justify-center col" text="20px">
-            Welcome! Check out the tutorial
-          </div>
-        </RouterLink>
-        <RouterLink to="/DeveDetail?title=What are frozen assets?&type=Help Center">
-          <div class="help-down" h="25" mt="9px" w="full" fw-400 flex="~ justify-center col" text="20px">
-            What are frozen assets?
-          </div>
-        </RouterLink>
-        <RouterLink to="/DeveDetail?title=Welcome! Check out the tutorial?&type=Help Center">
-          <div class="help-down" h="25" mt="9px" w="full" fw-400 flex="~ justify-center col" text="20px">
-            Welcome! Check out the tutorial
-          </div>
-        </RouterLink>
-        <RouterLink to="/DeveDetail?title=What are frozen assets?&type=Help Center">
-          <div class="help-down" h="25" mt="9px" w="full" fw-400 flex="~ justify-center col" text="20px ">
-            What are frozen assets?
+        <RouterLink v-for="(item, index) in routeList" :key="index" :to="item.to">
+          <div class="help-down" mb="9px" h="25" w="full" fw-400 flex="~ justify-center col" text="20px">
+            {{ item.title }}
           </div>
         </RouterLink>
       </div>

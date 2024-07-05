@@ -9,7 +9,7 @@ const type = route.query.type
   <div class="pc-px" mt="40px">
     <div class="pc-pl">
       <div text="14px" text-gray>
-        Home > <RouterLink :to="type == 'Help Center' ? '/HelpCenter' : '/DevelopDocument'">
+        Home > <RouterLink :to="type === 'Help Center' ? '/HelpCenter' : '/DevelopDocument'">
           {{ type }}
         </RouterLink> > <span text-black fw-600>{{ title }}</span>
       </div>
@@ -38,7 +38,7 @@ const type = route.query.type
           to avoid users using the exchange to
           launder money!
         </div>
-        <div class="detail-img" h="254px" w="full" mt="20px" style="background: url('PC/detail.png') center no-repeat #303030;background-size:296px 177px;" />
+        <div class="detail-img" h="254px" w="full" mt="20px" style="background: url('/PC/detail.png') center no-repeat #303030;background-size:296px 177px;" />
         <div text="16px" fw-400 mt="40px">
           According to the relevant provisions of the anti-money laundering law, each exchange needs to be controlled by price, which needs to be completed
           - to the transaction can be withdrawn, to avoid users using the exchange to launder money! For example, charge 1000 coins,0 transaction amount
@@ -71,7 +71,7 @@ const type = route.query.type
 .detail-img {
   display: block;
 }
-/* 移动端样式 */
+/* mobile style */
 @media (max-width: 1024px) {
   .box1 {
     width: 100%;
