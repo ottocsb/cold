@@ -9,7 +9,7 @@ const type = route.query.type
   <div class="pc-px" mt="40px">
     <div class="pc-pl">
       <div text="14px" text-gray>
-        Home > <RouterLink :to="type === 'Help Center' ? '/HelpCenter' : '/DevelopDocument'">
+        Home > <RouterLink :to="type === 'Help Center' ? '/helpcenter' : '/developdocument'">
           {{ type }}
         </RouterLink> > <span text-black fw-600>{{ title }}</span>
       </div>

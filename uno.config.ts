@@ -14,6 +14,11 @@ export default defineConfig({
   shortcuts: [
     ['btn', 'px-4 py-1']
   ],
+  theme: {
+    breakpoints: {
+      lg: '1270px'
+    }
+  },
   presets: [
     presetUno(),
     presetAttributify(),

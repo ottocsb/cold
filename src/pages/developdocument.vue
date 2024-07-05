@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 defineOptions({
-  name: 'DevelopDocument'
+  name: 'developdocument'
 })
 const router = useRouter()
 const Title = ref('Welcome! Check out the tutorial')

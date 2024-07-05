@@ -6,7 +6,7 @@ defineOptions({
 
 <template>
   <div pb="120px">
-    <div class="box1 pc-px" text-white h="150" flex="~ justify-center col gap-2">
+    <div class="box1 pc-px <lg:bg-contain!" text-white h="150" flex="~ justify-center col gap-2">
       <div text="30px <lg:20px">
         Simplify your cryptocurrency payment experience
       </div>
