@@ -485,12 +485,13 @@ const handleChildClick = (title: string, index: number) => {
 .help-down {
   background: #faf8fa;
   border-radius: 10px;
-  padding-left: 27px;
+  padding:0 27px;
   border: 1px solid #faf8fa;
   transition: 0.5s ease-in-out;
   background: url('/PC/more.png') 96% 50% no-repeat;
   background-size: 6px 12px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 .help-down:hover {
   border: 1px solid #000000;
