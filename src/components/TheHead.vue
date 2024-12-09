@@ -24,22 +24,24 @@ const routeList: any[] = [
 ]
 const Language = [
   {
-    name: '中文简体'
+    name: '中文简体',
+    key: 'chs'
   },
   {
-    name: '中文繁体'
+    name: '中文繁体',
+    key: 'cht'
   },
   {
-    name: 'English'
-  },
-  {
-    name: '日语'
-  },
-  {
-    name: '韩语'
+    name: 'English',
+    key: 'enu'
   }
 ]
 const showMenu = ref(false)
+
+const langClick = (item: any) => {
+  showOption.value = false
+  useLanguage.value = item.name
+}
 </script>
 
 <template>
@@ -79,7 +81,7 @@ const showMenu = ref(false)
             :key="item.name"
             class="p-2 text-center text-black"
             :class="[useLanguage === item.name ? 'bg-#e3e3e3!' : '', index === 0 ? 'rounded-t-10px' : '', index === Language.length - 1 ? 'rounded-b-10px' : '']"
-            @click="() => { useLanguage = item.name; showOption = false }"
+            @click="langClick(item)"
           >
             {{ item.name }}
           </div>
@@ -106,7 +108,7 @@ const showMenu = ref(false)
       </nav>
       <div w-full mt="20" px="30px">
         <div flex class="block" w="70" b-rd="10px!" b="solid 1px #FFE7E7E7" bg="#faf8fa">
-          <div w-full flex flex-wrap style="align-items: center;" @click="() => { showOption = !showOption }">
+          <div w-full flex flex-wrap items-center @click="() => { showOption = !showOption }">
             <img src="/PC/language.png" alt="language" h="22px" w="22px" ml="20px">
             <div
               v-on-click-outside="() => { showOption = false }"
@@ -129,7 +131,7 @@ const showMenu = ref(false)
                 pl="60px"
                 class="p-2 text-black"
                 :class="[useLanguage === item.name ? 'bg-#e3e3e3!' : '', index === Language.length - 1 ? 'rounded-b-10px' : '']"
-                @click="(event) => { useLanguage = item.name; showOption = false;event.stopPropagation() }"
+                @click="langClick(item)"
               >
                 {{ item.name }}
               </div>

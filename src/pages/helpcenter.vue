@@ -1,35 +1,17 @@
 <script setup lang = "ts">
 defineOptions({
-  name: 'helpcenter'
+  name: 'Helpcenter'
 })
+const { data } = fetchHelpCenterList()
 
-const routeList = [
-  {
-    title: 'Welcome! Check out the tutorial',
-    to: '/DeveDetail?title=Welcome! Check out the tutorial?&type=Help Center'
-  },
-  {
-    title: 'What are frozen assets?',
-    to: '/DeveDetail?title=What are frozen assets?&type=Help Center'
-  },
-  {
-    title: 'Welcome! Check out the tutorial',
-    to: '/DeveDetail?title=Welcome! Check out the tutorial?&type=Help Center'
-  },
-  {
-    title: 'What are frozen assets?',
-    to: '/DeveDetail?title=What are frozen assets?&type=Help Center'
-  },
-  {
-    title: 'Welcome! Check out the tutorial',
-    to: '/DeveDetail?title=Welcome! Check out the tutorial?&type=Help Center'
-  },
-  {
-    title: 'What are frozen assets?',
-    to: '/DeveDetail?title=What are frozen assets?&type=Help Center'
+const routeList = computed(() => {
+  if (data.value?.data.code === 0) {
+    return data.value?.data.data
   }
-
-]
+  else {
+    return []
+  }
+})
 </script>
 
 <template>
@@ -42,7 +24,7 @@ const routeList = [
         <input type="text" placeholder="Please enter your question" w="440px" h="44px" class="border">
       </div>
       <div class="" mt="70px" mb="98px">
-        <RouterLink v-for="(item, index) in routeList" :key="index" :to="item.to">
+        <RouterLink v-for="(item, index) in routeList" :key="index" :to="`/detail?id=${item.id}&type=help`">
           <div class="help-down" mb="9px" h="25" w="full" fw-400 flex="~ justify-center col" text="20px">
             {{ item.title }}
           </div>
