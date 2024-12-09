@@ -5,7 +5,49 @@ button:
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
-intro:
-  dynamic-route: Demo of dynamic route
-  hi: Hi, {name}!
 not-found: Not found
+head:
+  home: Home
+  supportChain: Supported Chain
+  devDocument: Developer Document
+  helpCenter: Help Center
+  merchantLogin: Merchant Login
+home:
+  text1: Simplify your cryptocurrency payment experience
+  text2: Easily accept payments from all over the world.
+  text3: Instant settlement, low fees and
+  text4: extensive asset support
+  text5: Safe and reliable
+  text6: Take advantage of the most advanced encryption technology
+  text7: and security protocols to keep your funds safe.
+  text8: Low commission
+  text9: We offer competitive low fees to make your payments
+  text10: more economical.
+  text11: Multiple cryptocurrencies supported
+  text12: Support a variety of mainstream cryptocurrencies to meet the
+  text13: payment needs of different users.
+  text14: Easy to use
+  text15: The easy-to-understand interface and process make it easy for
+  text16: you to make cryptocurrency payments.
+  text17: Whether you are a merchant or an individual user, we offer a one-stop solution for your payment needs
+  text18: Integrate encrypted payments with just a few lines of code
+  text19: We can help you choose the perfect payment solution and answer any questions about our products.
+  text20: We'll wait for you here.
+  text21: Please fill out the form and we will contact you later.
+  name: Name
+  phone: Phone
+  mailBox: Mailbox
+  plsEnterName: Please enter your name
+  plsEnterPhone: Please enter your mobile number
+  plsEnterMailBox: Please enter your email address
+support:
+  text1: Multiple currencies are supported
+help:
+  text1: Welcome to the help Center
+  text2: Please enter your question
+detail:
+  backText: Return to previous page
+footer:
+  text1: Easily accept payments from all over the world. Instant settlement, low fees and extensive assst support
+  text2: All rights reserved.
+

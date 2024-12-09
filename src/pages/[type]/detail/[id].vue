@@ -1,10 +1,9 @@
 <script setup lang = "ts">
 const route = useRoute()
 const router = useRouter()
-const id = route.query.id
-const type = route.query.type
-
-const realType = type === 'help' ? 'Help Center' : 'develop a document'
+const id = route.params?.id
+const type = route.params?.type
+const { t } = useI18n()
 
 const { data: detailData, runAsync: devRun } = fetchDevelopDetail()
 const { data: helpData, runAsync: helpRun } = fetchHelpCenterDetail()
@@ -42,8 +41,8 @@ const detail = computed(() => {
   <div class="pc-px" mt="40px">
     <div class="pc-pl">
       <div text="14px" text-gray>
-        Home > <RouterLink :to="type === 'help' ? '/helpcenter' : '/developdocument'">
-          {{ realType }}
+        {{ t('head.home') }} > <RouterLink :to="type === 'help' ? '/help' : '/develop/document'">
+          {{ type === 'help' ? t('head.helpCenter') : t('head.devDocument') }}
         </RouterLink> > <span text-black fw-600>{{ detail.title }}</span>
       </div>
       <div mt="50px" class="detail-box">
@@ -84,7 +83,7 @@ const detail = computed(() => {
         <!--        </div> -->
       </div>
       <div text="16px" mt="30px" mb="45px" class="detail-re" @click="router.back">
-        <span>Return to previous page</span>
+        <span>{{ t('detail.backText') }}</span>
       </div>
     </div>
   </div>

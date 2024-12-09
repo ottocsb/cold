@@ -2,6 +2,9 @@
 defineOptions({
   name: 'Helpcenter'
 })
+
+const { t } = useI18n()
+
 const { data } = fetchHelpCenterList()
 
 const routeList = computed(() => {
@@ -18,13 +21,13 @@ const routeList = computed(() => {
   <div class="pc-px">
     <div class="pc-pl">
       <div mt="71px" text="22px <lg:20px" fw-700>
-        Welcome to the help Center
+        {{ t('help.text1') }}
       </div>
       <div class="box1" mt="37px" h="44px" w="440px" style="">
-        <input type="text" placeholder="Please enter your question" w="440px" h="44px" class="border">
+        <input type="text" :placeholder="t('help.text2')" w="440px" h="44px" class="border">
       </div>
       <div class="" mt="70px" mb="98px">
-        <RouterLink v-for="(item, index) in routeList" :key="index" :to="`/detail?id=${item.id}&type=help`">
+        <RouterLink v-for="(item, index) in routeList" :key="index" :to="`/help/detail/${item.id}`">
           <div class="help-down" mb="9px" h="25" w="full" fw-400 flex="~ justify-center col" text="20px">
             {{ item.title }}
           </div>

@@ -51,7 +51,7 @@ const detail = computed(() => {
 
 const handleChildClick = async (child: any, index: number) => {
   if (window.innerWidth <= 1024) {
-    router.push(`/detail?id=${encodeURIComponent(child.id)}&type=dev`)
+    router.push(`/develop/detail/${child.id}`)
   }
   else {
     await runAsync(child.id)

@@ -1,20 +1,24 @@
 <script setup lang="ts">
+import { availableLocales } from '~/modules/i18n'
+const { t } = useI18n()
 defineOptions({
   name: 'IndexPage'
 })
+
+console.log('availableLocales', availableLocales)
 </script>
 
 <template>
   <div pb="120px">
-    <div class="box1 pc-px" text-white h="150" flex="~ justify-center col gap-2">
+    <div class="pc-px box1" text-white h="150" flex="~ justify-center col gap-2">
       <div text="30px <lg:20px">
-        Simplify your cryptocurrency payment experience
+        {{ t('home.text1') }}
       </div>
       <div fw="light" text="50px  <lg:24px">
-        Easily accept payments from all over the world.
+        {{ t('home.text2') }}
       </div>
       <div fw-700 text="50px  <lg:28px">
-        Instant settlement, low fees and <br class="block <lg:hidden"> extensive asset support
+        {{ t('home.text3') }} <br class="block <lg:hidden"> {{ t('home.text4') }}
       </div>
     </div>
     <div class="pc-px" mt="150px" grid="~ cols-2 <lg:cols-1" justify-items-center space-x="25 <lg:0" space-y="0 <lg:10">
@@ -27,11 +31,11 @@ defineOptions({
         <img z="-10" src="/PC/bg2.png" alt="is bg" absolute left-1 h-full w-full>
         <div ma py="0 <lg:14" px="8 <lg:8">
           <p text="32px left" fw="700" w-full>
-            Safe and reliable
+            {{ t('home.text5') }}
           </p>
           <p text="18px left" w-full>
-            Take advantage of the most advanced encryption technology <br>
-            and security protocols to keep your funds safe.
+            {{ t('home.text6') }} <br>
+            {{ t('home.text7') }}
           </p>
         </div>
       </div>
@@ -46,11 +50,11 @@ defineOptions({
         <img z="-10" src="/PC/bg2.png" alt="is bg" absolute left-1 h-full w-full>
         <div ma py="0 <lg:14" px="8 <lg:8">
           <p text="32px left" fw="700" w-full>
-            Low commission
+            {{ t('home.text8') }}
           </p>
           <p text="18px left" w-full>
-            We offer competitive low fees to make your payments<br>
-            more economical.
+            {{ t('home.text9') }}<br>
+            {{ t('home.text10') }}
           </p>
         </div>
       </div>
@@ -66,11 +70,11 @@ defineOptions({
         <img z="-10" src="/PC/bg2.png" alt="is bg" absolute left-1 h-full w-full>
         <div ma py="0 <lg:14" px="8 <lg:8">
           <p text="32px left" fw="700" w-full>
-            Multiple cryptocurrencies supported.
+            {{ t('home.text11') }}
           </p>
           <p text="18px left" w-full>
-            Support a variety of mainstream cryptocurrencies to meet the<br>
-            payment needs of different users.
+            {{ t('home.text12') }}<br>
+            {{ t('home.text13') }}
           </p>
         </div>
       </div>
@@ -85,11 +89,11 @@ defineOptions({
         <img z="-10" src="/PC/bg2.png" alt="is bg" absolute left-1 h-full w-full>
         <div ma py="0 <lg:14" px="8 <lg:8">
           <p text="32px left" fw="700" w-full>
-            Easy to use
+            {{ t('home.text14') }}
           </p>
           <p text="18px left" w-full>
-            The easy-to-understand interface and process make it easy for<br>
-            you to make cryptocurrency payments.
+            {{ t('home.text15') }}<br>
+            {{ t('home.text16') }}
           </p>
         </div>
       </div>
@@ -98,41 +102,40 @@ defineOptions({
     <div mt-100px p="14 <lg:8" text="white center" flex style="background: url('/PC/bg3.png') no-repeat center;background-size: cover">
       <div ma>
         <span fw="700" text="50px <lg:24px">
-          Whether you are a merchant or an individual user,
-          we offer a one-stop solution for your payment needs
+          {{ t('home.text17') }}
         </span>
         <br><br>
         <span text="30px <lg:15px">
-          Integrate encrypted payments with just a few lines of code
+          {{ t('home.text18') }}
         </span>
       </div>
     </div>
     <div class="pc-px mt-25" flex="~ col gap-10">
       <div fw="700" text="20px">
-        We can help you choose the perfect payment solution and answer any questions about our products.
+        {{ t('home.text19') }}
       </div>
       <div text="16px black">
-        We'll wait for you here.<br>
-        <span text="#757575">Please fill out the form and we will contact you later.</span>
+        {{ t('home.text20') }}<br>
+        <span text="#757575">{{ t('home.text21') }}</span>
       </div>
       <div grid="~ cols-3 gap-5" class="<lg:cols-1">
         <div flex="~ col gap-15px">
           <span text="14px black">
-            Name
+            {{ t('home.name') }}
           </span>
-          <input placeholder="Please enter your name" class="footerInput">
+          <input :placeholder="t('home.plsEnterName')" class="footerInput">
         </div>
         <div flex="~ col gap-15px">
           <span text="14px black">
-            Phone
+            {{ t('home.phone') }}
           </span>
-          <input placeholder="Please enter your mobile number" class="footerInput">
+          <input :placeholder="t('home.plsEnterPhone')" class="footerInput">
         </div>
         <div flex="~ col gap-15px">
           <span text="14px black">
-            Mailbox
+            {{ t('home.mailBox') }}
           </span>
-          <input placeholder="Please enter your email address" class="footerInput">
+          <input :placeholder="t('home.plsEnterMailBox')" class="footerInput">
         </div>
       </div>
     </div>

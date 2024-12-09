@@ -1,5 +1,5 @@
 import path from 'node:path'
-import VueI18n from '@intlify/unplugin-vue-i18n/vite'
+import VueI18nPlugin  from '@intlify/unplugin-vue-i18n/vite'
 import Vue from '@vitejs/plugin-vue'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -74,7 +74,7 @@ export default defineConfig({
     Unocss(),
 
     // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
-    VueI18n({
+    VueI18nPlugin({
       runtimeOnly: true,
       compositionOnly: true,
       fullInstall: true,

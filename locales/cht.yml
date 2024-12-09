@@ -5,7 +5,48 @@ button:
   home: 首页
   toggle_dark: 切换深色模式
   toggle_langs: 切换语言
-intro:
-  dynamic-route: 动态路由演示
-  hi: 你好，{name}
 not-found: 未找到页面
+head:
+  home: 首頁
+  supportChain: 支援鏈
+  devDocument: 開發文件
+  helpCenter: 幫助中心
+  merchantLogin: 商家登入
+home:
+  text1: 簡化您的加密貨幣支付體驗
+  text2: 輕鬆接受來自世界各地的付款。
+  text3: 即時結算，費用低廉和
+  text4: 廣泛的資產支持
+  text5: 安全可靠
+  text6: 利用最先進的加密技術和
+  text7: 安全協議來確保您的資金安全。
+  text8: 低佣金
+  text9: 我們提供具競爭力的低費用，讓您的付款
+  text10: 更加經濟。
+  text11: 支援多種加密貨幣
+  text12: 支援多種主流加密貨幣，
+  text13: 滿足不同使用者的支付需求。
+  text14: 無需註冊，即可快速接受加密貨幣付款。
+  text15: 簡單易懂的介面和流程
+  text16: 讓您輕鬆進行加密貨幣支付。
+  text17: 無論您是商家還是個人用戶，我們都能為您的支付需求提供一站式解決方案
+  text18: 只需幾行程式碼即可整合加密支付
+  text19: 我們可以幫助您選擇完美的支付解決方案並回答有關我們產品的任何問題。
+  text20: 我們在這裡等你。
+  text21: 請填寫表格，我們稍後會與您聯繫。
+  name: 姓名
+  phone: 電話
+  mailBox: 郵件
+  plsEnterName: 請輸入您的姓名
+  plsEnterPhone: 請輸入您的電話
+  plsEnterMailBox: 請輸入您的郵件地址
+support:
+  text1: 支援多種貨幣
+help:
+  text1: 歡迎來到幫助中心
+  text2: 請輸入您的問題
+detail:
+  backText: 返回上一頁
+footer:
+  text1: 輕鬆接受來自世界各地的付款。即時結算、低費用和廣泛的支援
+  text2: 版權所有。

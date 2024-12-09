@@ -1,27 +1,30 @@
 <script setup lang = "ts">
 import { vOnClickOutside } from '@vueuse/components'
+import { loadLanguageAsync } from '~/modules/i18n'
+
+const { t } = useI18n()
 
 const route = useRoute()
 const useLanguage = ref('English')
 const showOption = ref(false)
-const routeList: any[] = [
+const routeList = ref([
   {
     path: '/',
-    name: 'Home'
+    name: t('head.home')
   },
   {
-    path: '/supportingchain',
-    name: 'Supporting chain'
+    path: '/support/chain',
+    name: t('head.supportChain')
   },
   {
-    path: '/developdocument',
-    name: 'Develop a document'
+    path: '/develop/document',
+    name: t('head.devDocument')
   },
   {
-    path: '/helpcenter',
-    name: 'Help Center'
+    path: '/help',
+    name: t('head.helpCenter')
   }
-]
+])
 const Language = [
   {
     name: '中文简体',
@@ -38,9 +41,10 @@ const Language = [
 ]
 const showMenu = ref(false)
 
-const langClick = (item: any) => {
+const langClick = async (item: any) => {
   showOption.value = false
   useLanguage.value = item.name
+  await loadLanguageAsync(item.key)
 }
 </script>
 
@@ -49,19 +53,34 @@ const langClick = (item: any) => {
     <img src="/PC/logo.png" alt="this is logo" h="5">
     <div flex-1 class="flex <lg:hidden">
       <ul ma flex gap-4>
-        <li v-for="item in routeList" :key="item.path">
-          <RouterLink :to="item.path" :class="[route.path === item.path ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
-            {{ item.name }}
+        <li>
+          <RouterLink to="/" :class="[route.path === '/' ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
+            {{ t('head.home') }}
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/support/chain" :class="[route.path === '/support/chain' ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
+            {{ t('head.supportChain') }}
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/develop/document" :class="[route.path === '/develop/document' ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
+            {{ t('head.devDocument') }}
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/help" :class="[route.path === '/help' ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
+            {{ t('head.helpCenter') }}
           </RouterLink>
         </li>
       </ul>
     </div>
-    <button h="40px" px="10px" text="white 14px" b-rd="10px" bg="black" mr="20px <lg:50px!">
-      Merchant login
+    <button h="40px" px="10px" w="120px" text="white 14px" b-rd="10px" bg="black" mr="20px <lg:50px!">
+      {{ t('head.merchantLogin') }}
     </button>
     <img z="10" src="/PC/menu.png" alt="is menu" absolute right-4 h="5" w="6.5" class="hidden <lg:block" @click="showMenu = true">
-    <div flex space-x="12px" class="block <lg:hidden" w="30">
-      <img src="/PC/language.png" alt="language" h="19px" w="19px">
+    <div flex items-center space-x="12px" class="block <lg:hidden" w="30">
+      <img src="/PC/language.png" alt="language" size="19px">
       <div
         v-on-click-outside="() => { showOption = false }"
         relative
@@ -75,7 +94,7 @@ const langClick = (item: any) => {
           {{ useLanguage }}
         </div>
         <div class="i-carbon:chevron-down" />
-        <div v-if="showOption" top="8" w="200px" b-rd="10px!" b="solid 1px black" bg="#faf8fa" absolute z-99 flex flex-col>
+        <div v-if="showOption" top="8" w="180px" b-rd="10px!" b="solid 1px black" bg="#faf8fa" absolute z-99 flex flex-col>
           <div
             v-for="(item, index) in Language"
             :key="item.name"
