@@ -5,7 +5,7 @@ defineOptions({
 
 const { data } = fetchDevelopList()
 const { data: detailData, runAsync } = fetchDevelopDetail()
-
+const { t } = useI18n()
 const devList = computed(() => {
   if (data.value?.data.code === 0) {
     return data.value?.data.data
@@ -72,7 +72,7 @@ onMounted(() => {
 <template>
   <div class="pc-px" mt="71px">
     <div class="dev-left">
-      <ul>
+      <ul v-if="devList.length !== 0">
         <li
           v-for="(item, index) in devList" :id="`content-${index + 1}`"
           :key="index"
@@ -109,6 +109,9 @@ onMounted(() => {
           </div>
         </li>
       </ul>
+      <div>
+        {{ t('common.noContent') }}
+      </div>
     </div>
     <div v-if="currentIndex" class="dev-right">
       <h2 text="24px" fw-600>

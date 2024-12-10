@@ -112,15 +112,30 @@ const langClick = async (item: any) => {
     <div v-if="showMenu" class="menu-drawer" bg="white" z="999" fixed h-full w-full overflow-hidden pt="20px">
       <div flex="~ justify-between" b-b="gray-10 solid 1px" px="30px">
         <button h="40px" px="10px" text="white 14px" b-rd="5px" bg="black" mb="20px">
-          Merchant login
+          {{ t('head.merchantLogin') }}
         </button>
         <img src="/PC/close.png" alt="" w="6.5" h="6" mt="10px" @click="showMenu = false">
       </div>
       <nav px="30px" mt="30px">
         <ul ma>
-          <li v-for="item in routeList" :key="item.path" class="mr-4" mt="10" text="6">
-            <RouterLink :to="item.path" :class="[route.path === item.path ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800" @click="showMenu = false">
-              {{ item.name }}
+          <li class="mr-4" mt="10" text="6">
+            <RouterLink to="/" :class="[route.path === '/' ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
+              {{ t('head.home') }}
+            </RouterLink>
+          </li>
+          <li class="mr-4" mt="10" text="6">
+            <RouterLink to="/support/chain" :class="[route.path === '/support/chain' ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
+              {{ t('head.supportChain') }}
+            </RouterLink>
+          </li>
+          <li class="mr-4" mt="10" text="6">
+            <RouterLink to="/develop/document" :class="[route.path === '/develop/document' ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
+              {{ t('head.devDocument') }}
+            </RouterLink>
+          </li>
+          <li class="mr-4" mt="10" text="6">
+            <RouterLink to="/help" :class="[route.path === '/help' ? 'text-black! fw-700' : '']" class="text-gray-500 hover:text-gray-800">
+              {{ t('head.helpCenter') }}
             </RouterLink>
           </li>
         </ul>

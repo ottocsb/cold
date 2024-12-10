@@ -50,4 +50,5 @@ detail:
 footer:
   text1: Easily accept payments from all over the world. Instant settlement, low fees and extensive assst support
   text2: All rights reserved.
-
+common:
+  noContent: Sorry, no content yet
